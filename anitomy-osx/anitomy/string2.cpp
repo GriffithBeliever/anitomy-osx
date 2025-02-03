@@ -1,3 +1,4 @@
+
 /*
 ** Copyright (c) 2014-2016, Eren Okka
 **
@@ -64,7 +65,7 @@ inline wchar_t ToLower(const wchar_t c) {
          static_cast<wchar_t>(std::towlower(c));
 }
 
-struct ToUpper : public std::unary_function<char_t, char_t> {
+struct ToUpper : public std::__unary_function<char_t, char_t> {
   wchar_t operator ()(const wchar_t c) const {
     return (c >= L'A' && c <= L'Z') ? c :
            (c >= L'a' && c <= L'z') ? (c + (L'A' - L'a')) :
@@ -133,3 +134,4 @@ void TrimString(string_t& str, const char_t trim_chars[]) {
 }
 
 }  // namespace anitomy
+  // namespace anitomy
